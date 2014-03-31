@@ -23,8 +23,7 @@ public class Leetcode7 {
 		      {		
 		    	 TreeNode current = working.pop();
 		    	 result.add(current.val);
-		    	 //System.out.println(current.val);
-		    	 
+		         //右子结点先进栈，左子结点再进栈，所以先访问的是左子结点 
 	    	     if (current.right != null)
 	    	     {
 	    	    	 working.push(current.right);
@@ -40,6 +39,81 @@ public class Leetcode7 {
 		   		  
 	        return result;
 	    }
+	  
+	  /* 非递归实现后序遍历 
+	     * 除了最左的一个左子结点，把所有的左子结点相继入栈（是一个循环过程） 
+	     * 这时p指向最左的那个左子结点， 
+	     * 重复：若p没有右子结点（或者p的右子结点已经输出），则输出p，同时出栈，将值赋给p 
+	     * 若p有右子结点，则将p入栈，同时p指向其右子结点 
+	     * 重复以上步骤，直到p为空 
+	     */  
+	  public ArrayList<Integer> stackpostorderTraversal(TreeNode root) {
+		  ArrayList<Integer> result = new ArrayList<Integer>();
+		  Stack<TreeNode> working = new Stack<TreeNode>();
+		  TreeNode lastvisited = root;
+		  TreeNode current = root;
+		  
+		  while (current != null)
+		  {
+				  while (current.left != null)
+				  {				 
+					  working.push(current);
+					  current = current.left;
+				  }
+				  
+				  while(current.right == null || current.right == lastvisited)
+				  {
+					  result.add(current.val);
+					  lastvisited = current;
+					  if (working.empty()) return result;
+					  current = working.pop();
+					  
+				  }
+				  
+				  working.push(current);
+				  current = current.right;		  
+		  }		  		  
+		  return result;
+	        
+	    }
+	
+	  /* 非递归实现中序遍历 
+	     * 除了最左的一个左子结点，把所有的左子结点相继入栈（是一个循环过程） 
+	     * 这时p指向最左的那个左子结点， 
+	     * 重复：若p没有右子结点（或者p的右子结点已经输出），则输出p，同时出栈，将值赋给p 
+	     * 若p有右子结点，则将p入栈，同时p指向其右子结点 
+	     * 重复以上步骤，直到p为空 
+	     */  
+	  
+	  public ArrayList<Integer> stackinorderTraversal(TreeNode root)
+	  {
+		  ArrayList<Integer> result = new ArrayList<Integer>();
+		  Stack<TreeNode> working = new Stack<TreeNode>();
+		  TreeNode current = root;
+		  while(current != null)
+		  {
+			  while (current != null)
+			  {
+				  if (current.right != null)
+				      working.push(current.right);
+				  working.push(current);
+				  current = current.left;
+			  }
+			  current = working.pop();
+			  
+			  while (!working.empty() && current.right == null)
+			  {
+				  result.add(current.val);
+				  current = working.pop();
+			  }
+			  result.add(current.val);
+			  if (!working.empty())
+				  current = working.pop();
+			  else current = null;			  
+		  }
+		  
+		  return result;
+	  }
 	 
 	  public static void main(String args[])
 	  {
@@ -54,7 +128,7 @@ public class Leetcode7 {
 		  
 		  ArrayList<Integer> result = new ArrayList<Integer>();
 		  		  
-          result = new Leetcode7().stackpreorderTraversal(root);
+          result = new Leetcode7().stackinorderTraversal(root);
           
           for (Integer show:result)
           {
