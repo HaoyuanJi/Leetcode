@@ -55,24 +55,25 @@ public class Leetcode7 {
 		  
 		  while (current != null)
 		  {
-				  while (current.left != null)
-				  {				 
-					  working.push(current);
-					  current = current.left;
-				  }
-				  
-				  while(current.right == null || current.right == lastvisited)
-				  {
-					  result.add(current.val);
-					  lastvisited = current;
-					  if (working.empty()) return result;
-					  current = working.pop();
-					  
-				  }
-				  
-				  working.push(current);
-				  current = current.right;		  
-		  }		  		  
+              while (current.left != null)
+              {
+            	  working.push(current);
+            	  current = current.left;           	  
+              }
+			  
+              while (current.right == null || current.right == lastvisited)
+              {
+            	  result.add(current.val);
+            	  lastvisited = current;
+            	  if (working.empty()) return result;
+            	  current = working.pop();  	  
+              }
+              working.push(current);
+              current = current.right;
+			  
+		  }
+
+		  		  
 		  return result;
 	        
 	    }
@@ -88,28 +89,27 @@ public class Leetcode7 {
 		  ArrayList<Integer> result = new ArrayList<Integer>();
 		  Stack<TreeNode> working = new Stack<TreeNode>();
 		  TreeNode current = root;
-		  while(current != null)
-		  {
-			  while (current != null)
-			  {
-				  if (current.right != null)
-				      working.push(current.right);
-				  working.push(current);
-				  current = current.left;
-			  }
-			  current = working.pop();
-			  
-			  while (!working.empty() && current.right == null)
-			  {
-				  result.add(current.val);
-				  current = working.pop();
-			  }
-			  result.add(current.val);
-			  if (!working.empty())
-				  current = working.pop();
-			  else current = null;			  
-		  }
-		  
+
+          while (current != null)
+          {
+        	  while (current != null)
+        	  {
+        		  if (current.right !=null)
+                     working.push(current.right);
+        		  working.push(current);
+        		  current = current.left;
+        	  }
+        	  current = working.pop();
+        	  while (!working.empty() && current.right == null)
+  			  {
+        		  result.add(current.val);
+        		  current = working.pop();
+       		  }
+        	  result.add(current.val);
+        	  if (!working.empty()) current = working.pop();
+        	  else current = null;
+        	  
+          }
 		  return result;
 	  }
 	 
@@ -126,7 +126,7 @@ public class Leetcode7 {
 		  
 		  ArrayList<Integer> result = new ArrayList<Integer>();
 		  		  
-          result = new Leetcode7().stackinorderTraversal(root);
+          result = new Leetcode7().stackpostorderTraversal(root);
           
           for (Integer show:result)
           {
