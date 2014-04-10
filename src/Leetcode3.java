@@ -12,6 +12,7 @@ public class Leetcode3 {
 		      Point(int a, int b) { x = a; y = b; }
 		  }
 	
+	// define a new class to denote the relationship
 	static class Pointrelationship
 	{
 		double slope;
@@ -21,6 +22,7 @@ public class Leetcode3 {
 	   { this.slope = slope; this.status = status; }
 	}
 	
+	// start mergesort
     public void merge(Pointrelationship[] input,int start, int split, int end)
     {
     	Pointrelationship[] copy = new Pointrelationship[end - start + 1];
@@ -104,6 +106,7 @@ public class Leetcode3 {
 		
 	}
 	
+	// First calculate the slope for each pair of points. Then sort them and find the slope with most points
 	public int findmaxpoint(Pointrelationship[] target)
 	{
 		int maxpoints = 0;
