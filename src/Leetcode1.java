@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Stack;
 public class Leetcode1 {	
+	
+	// The most difficult thing is to trim the space and other annoying details
 	 public static String reverseWords(String s) {
 	        
 		 Stack<String> tempsen = new Stack<String>();
@@ -63,6 +65,7 @@ public class Leetcode1 {
 	        return sb2.toString();
 	        
 	    }
+	 
 	 public static void main(String args[])
 	 {
 		 String input = "jijoji  uy rttnnnp juipi o hyo drdtdrtdt ftyu";
