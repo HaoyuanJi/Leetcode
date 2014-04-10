@@ -38,13 +38,6 @@ public class Leetcode9 {
 	    	
 	    }
 	    working.next = null;
-//	    ListNode snd = working.next;
-//	    working.next = null;
-//	    
-//	    while (snd != null)
-//	    {
-//	    	
-//	    }
     }
 	
 	public static void main(String args[])
@@ -64,8 +57,6 @@ public class Leetcode9 {
 
 		
 		new Leetcode9().reorderList(n1);
-//		ListNode head = new Leetcode4().mergeList(n1, n5);
-		//System.out.println(test.val);
 	    ListNode ind = n1;
 	    while(ind != null)
 		{
