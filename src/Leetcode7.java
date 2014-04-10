@@ -11,6 +11,7 @@ public class Leetcode7 {
 	      TreeNode(int x) { val = x; }
 	  }
 	  
+	  // Preorder traversal is the simplest one.
 	  public ArrayList<Integer> stackpreorderTraversal(TreeNode root) {
 		    ArrayList<Integer> result = new ArrayList<Integer>();
 		    Stack<TreeNode> working = new Stack<TreeNode>();
