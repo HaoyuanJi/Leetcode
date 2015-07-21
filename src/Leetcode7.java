@@ -40,6 +40,7 @@ public class Leetcode7 {
 		   		  
 	        return result;
 	    }
+
 	  
 	  /* 非递归实现后序遍历 
 	     * 除了最左的一个左子结点，把所有的左子结点相继入栈（是一个循环过程） 

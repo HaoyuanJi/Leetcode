@@ -66,12 +66,39 @@ public class Leetcode1 {
 	        
 	    }
 	 
+	 public static String reverseWords2(String s)
+	 {
+		 String[] words = s.split(" ");
+		 Stack<String> temp = new Stack<String>();
+		 
+		 for(int i = 0 ; i < words.length; i++)
+		 {
+			 String item = words[i].trim();
+			 if(item != null && !item.equals(""))
+				 temp.push(item);
+		 }
+		 
+		
+		 StringBuffer sb = new StringBuffer();
+		 while(!temp.empty())
+		 {
+			 String word = temp.pop();
+			 sb.append(word+" ");
+			 
+		 }
+		 
+		 
+		 
+		 
+		 return sb.toString().trim();
+	 }
 	 public static void main(String args[])
 	 {
-		 String input = "jijoji  uy rttnnnp juipi o hyo drdtdrtdt ftyu";
-		 String output = reverseWords(input);
-		 System.out.print(output);
+		 String input = "a";
+//		 String output = reverseWords(input);
+//		 System.out.print(output);
 		 
+		 System.out.println(reverseWords2(input));
 	 }
 
 }

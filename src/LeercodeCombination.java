@@ -190,6 +190,8 @@ public class LeercodeCombination {
 		int[] S ={1};
 		
 		List<List<Integer>> result = combinationSum2(S,1);
+	    HashMap<Integer,Double> result2 = new HashMap<Integer,Double>();
+	    
 
 		for(List<Integer> item:result)
 		{

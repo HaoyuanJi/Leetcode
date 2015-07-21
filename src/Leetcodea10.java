@@ -89,30 +89,30 @@ public class Leetcodea10 {
     
 	public static void main(String args[])
 	{
-		ListNode n1 = new Leetcodea10().new ListNode(1);
-		ListNode n2 = new Leetcodea10().new ListNode(2);
-		ListNode n3 = new Leetcodea10().new ListNode(3);
-		ListNode n4 = new Leetcodea10().new ListNode(4);
-		ListNode n5 = new Leetcodea10().new ListNode(5);
-//		ListNode n6 = new Leetcodea10().new ListNode(6);
- 
-		n1.next = n2;
-		n2.next = n3;
-		n3.next = n4;
-		n4.next = n5;
-		n5.next = n2;
-
-		
-//		boolean result = new Leetcodea10().hasCycle(n1);
-//		ListNode test = new Leetcodea10().detectCycle(n1);
-		int sizecycle = new Leetcodea10().sizeCycle(n1);
-//	    ListNode ind = n1;
-//	    while(ind != null)
-//		{
-//	    	System.out.println(ind.val);
-//			ind = ind.next;			
-//		}
-		
-	    System.out.println(sizecycle);
+//		ListNode n1 = new Leetcodea10().new ListNode(1);
+//		ListNode n2 = new Leetcodea10().new ListNode(2);
+//		ListNode n3 = new Leetcodea10().new ListNode(3);
+//		ListNode n4 = new Leetcodea10().new ListNode(4);
+//		ListNode n5 = new Leetcodea10().new ListNode(5);
+////		ListNode n6 = new Leetcodea10().new ListNode(6);
+// 
+//		n1.next = n2;
+//		n2.next = n3;
+//		n3.next = n4;
+//		n4.next = n5;
+//		n5.next = n2;
+//
+//		
+////		boolean result = new Leetcodea10().hasCycle(n1);
+////		ListNode test = new Leetcodea10().detectCycle(n1);
+//		int sizecycle = new Leetcodea10().sizeCycle(n1);
+////	    ListNode ind = n1;
+////	    while(ind != null)
+////		{
+////	    	System.out.println(ind.val);
+////			ind = ind.next;			
+////		}
+//		
+//	    System.out.println(sizecycle);
 	}
 }
