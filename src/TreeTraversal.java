@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Stack;
 
 
-public class Leetcode7 {
+public class TreeTraversal {
 
 	  public class TreeNode {
 	      int val;
@@ -117,18 +117,18 @@ public class Leetcode7 {
 	 
 	  public static void main(String args[])
 	  {
-		  TreeNode root = new Leetcode7().new TreeNode(1);
-		  TreeNode node1 = new Leetcode7().new TreeNode(2);
+		  TreeNode root = new TreeTraversal().new TreeNode(1);
+		  TreeNode node1 = new TreeTraversal().new TreeNode(2);
 		  root.left = node1;
-		  TreeNode node3 = new Leetcode7().new TreeNode(6);
+		  TreeNode node3 = new TreeTraversal().new TreeNode(6);
 		  root.right = node3;
-		  TreeNode node2 = new Leetcode7().new TreeNode(3);
+		  TreeNode node2 = new TreeTraversal().new TreeNode(3);
 		  node1.right = node2;
 		  
 		  
 		  ArrayList<Integer> result = new ArrayList<Integer>();
 		  		  
-          result = new Leetcode7().stackpostorderTraversal(root);
+          result = new TreeTraversal().stackpostorderTraversal(root);
           
           for (Integer show:result)
           {
